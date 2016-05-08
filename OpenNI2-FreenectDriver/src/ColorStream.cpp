@@ -3,7 +3,10 @@
 
 using namespace FreenectDriver;
 
-
+const float ColorStream::DIAGONAL_FOV = 73.9 * (M_PI / 180);
+const float ColorStream::HORIZONTAL_FOV = 62 * (M_PI / 180);
+const float ColorStream::VERTICAL_FOV = 48.6 * (M_PI / 180);
+const OniSensorType ColorStream::sensor_type = ONI_SENSOR_COLOR;
 ColorStream::ColorStream(Freenect::FreenectDevice* pDevice) : VideoStream(pDevice)
 {
   video_mode = makeOniVideoMode(ONI_PIXEL_FORMAT_RGB888, 640, 480, 30);

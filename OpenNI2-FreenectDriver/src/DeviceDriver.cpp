@@ -344,7 +344,7 @@ namespace FreenectDriver
 
 
 // macros defined in XnLib (not included) - workaround
-#define XN_NEW(type, arg...) new type(arg)
+#define XN_NEW(type, ...) new type(__VA_ARGS__)
 #define XN_DELETE(p) delete(p)
 ONI_EXPORT_DRIVER(FreenectDriver::Driver);
 #undef XN_NEW

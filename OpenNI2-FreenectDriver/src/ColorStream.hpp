@@ -2,6 +2,8 @@
 
 #include <algorithm> // for transform()
 #include <cmath> // for M_PI
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include "libfreenect.hpp"
 #include "Driver/OniDriverAPI.h"
 #include "VideoStream.hpp"
@@ -13,13 +15,13 @@ namespace FreenectDriver
   {
   public:
     // from NUI library & converted to radians
-    static const float DIAGONAL_FOV = 73.9 * (M_PI / 180);
-    static const float HORIZONTAL_FOV = 62 * (M_PI / 180);
-    static const float VERTICAL_FOV = 48.6 * (M_PI / 180);
+    static const float DIAGONAL_FOV;
+    static const float HORIZONTAL_FOV;
+    static const float VERTICAL_FOV;
 
   private:
     typedef std::map< OniVideoMode, std::pair<freenect_video_format, freenect_resolution> > FreenectVideoModeMap;
-    static const OniSensorType sensor_type = ONI_SENSOR_COLOR;
+    static const OniSensorType sensor_type;
 
     static FreenectVideoModeMap getSupportedVideoModes();
     OniStatus setVideoMode(OniVideoMode requested_mode);

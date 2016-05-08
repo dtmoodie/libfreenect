@@ -3,6 +3,19 @@
 
 using namespace FreenectDriver;
 
+const float DepthStream::DIAGONAL_FOV = 70 * (M_PI / 180);
+const float DepthStream::HORIZONTAL_FOV = 58.5 * (M_PI / 180);
+const float DepthStream::VERTICAL_FOV = 45.6 * (M_PI / 180);
+    // from DepthKinectStream.cpp
+const int DepthStream::MAX_VALUE = 10000;
+const unsigned long long DepthStream::GAIN_VAL = 42;
+const unsigned long long DepthStream::CONST_SHIFT_VAL = 200;
+const unsigned long long DepthStream::MAX_SHIFT_VAL = 2047;
+const unsigned long long DepthStream::PARAM_COEFF_VAL = 4;
+const unsigned long long DepthStream::SHIFT_SCALE_VAL = 10;
+const unsigned long long DepthStream::ZERO_PLANE_DISTANCE_VAL = 120;
+const double DepthStream::ZERO_PLANE_PIXEL_SIZE_VAL = 0.10520000010728836;
+const double DepthStream::EMITTER_DCMOS_DISTANCE_VAL = 7.5;
 
 DepthStream::DepthStream(Freenect::FreenectDevice* pDevice) : VideoStream(pDevice)
 {

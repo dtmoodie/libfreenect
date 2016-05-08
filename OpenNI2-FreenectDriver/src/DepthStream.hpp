@@ -2,6 +2,8 @@
 
 #include <algorithm> // for transform()
 #include <cmath> // for M_PI
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <cstdio> // for memcpy
 #include "libfreenect.hpp"
 #include "Driver/OniDriverAPI.h"
@@ -17,19 +19,19 @@ namespace FreenectDriver
   {
   public:
     // from NUI library and converted to radians
-    static const float DIAGONAL_FOV = 70 * (M_PI / 180);
-    static const float HORIZONTAL_FOV = 58.5 * (M_PI / 180);
-    static const float VERTICAL_FOV = 45.6 * (M_PI / 180);
+    static const float DIAGONAL_FOV;
+    static const float HORIZONTAL_FOV;
+    static const float VERTICAL_FOV;
     // from DepthKinectStream.cpp
-    static const int MAX_VALUE = 10000;
-    static const unsigned long long GAIN_VAL = 42;
-    static const unsigned long long CONST_SHIFT_VAL = 200;
-    static const unsigned long long MAX_SHIFT_VAL = 2047;
-    static const unsigned long long PARAM_COEFF_VAL = 4;
-    static const unsigned long long SHIFT_SCALE_VAL = 10;
-    static const unsigned long long ZERO_PLANE_DISTANCE_VAL = 120;
-    static const double ZERO_PLANE_PIXEL_SIZE_VAL = 0.10520000010728836;
-    static const double EMITTER_DCMOS_DISTANCE_VAL = 7.5;
+    static const int MAX_VALUE;
+    static const unsigned long long GAIN_VAL;
+    static const unsigned long long CONST_SHIFT_VAL;
+    static const unsigned long long MAX_SHIFT_VAL;
+    static const unsigned long long PARAM_COEFF_VAL;
+    static const unsigned long long SHIFT_SCALE_VAL;
+    static const unsigned long long ZERO_PLANE_DISTANCE_VAL;
+    static const double ZERO_PLANE_PIXEL_SIZE_VAL;
+    static const double EMITTER_DCMOS_DISTANCE_VAL;
 
   private:
     typedef std::map< OniVideoMode, std::pair<freenect_depth_format, freenect_resolution> > FreenectDepthModeMap;
